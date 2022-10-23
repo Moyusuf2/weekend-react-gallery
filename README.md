@@ -1,9 +1,8 @@
-# Project Name
+# Weekend React Project
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+I've always wanted to make a list of my favorite anime shows and now i can with this project.
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).

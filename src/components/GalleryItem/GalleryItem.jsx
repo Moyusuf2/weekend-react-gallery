@@ -5,12 +5,13 @@ function GalleryItem({galleryItems,likes}){
 
     const onLike = (evt) =>{
         evt.preventDefault();
-
+        //current likes
         likes(galleryItems)
 
     }
     const changeDisplay = ((evt) =>{
         evt.preventDefault();
+        //set display to equal description and vice versa
         setDisplay(!display)
     })
 
