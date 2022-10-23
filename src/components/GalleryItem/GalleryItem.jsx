@@ -1,6 +1,6 @@
-import React,{useState} from 'react';
+import { useState } from 'react'
 function GalleryItem({galleryItems,likes}){
-
+    const [display, setDisplay] = useState(true)
     console.log('in GalleryItem');
 
     const onLike = (evt) =>{
@@ -8,48 +8,34 @@ function GalleryItem({galleryItems,likes}){
 
         likes(galleryItems)
 
-    const changeDisplay = (evt =>{
-        const [displayPic, setDisplay] = useState(true)
-        setDisplay(!displayPic)
+    }
+    const changeDisplay = ((evt) =>{
+        evt.preventDefault();
+        setDisplay(!display)
     })
 
-    }
-
     return(
-        <div className="container">
-            <div key={galleryItems.id} className="row">
 
-                {displayPic ?
-
-                <div className="picture">
-                    <img src={galleryItems.path} alt="pic of goat"  onClick= {() => changeDisplay(galleryItems.id)}/>
-                             <button onClick={onLike}>Love it!</button>
-                        <h4>
-                            {galleryItems.likes} love this
-                        </h4>
+        <div key={galleryItems.id} className="container">
+            <div className="picture" >
+                {display === true &&
+                <img src={galleryItems.path} alt="pic of goat" 
+                onClick={changeDisplay}/>
+                }
+                {display === false &&
+                        <p onClick={changeDisplay}>{galleryItems.description}</p>}
                 </div>
-            :
-            <div className="comment">
-                <p className="description" onClick= {() => changeDisplay(galleryItems.id)}> {galleryItems.description}</p>
+                <div className='likes'>
                 <button onClick={onLike}>Love it!</button>
+                </div>
             <h4>
                 {galleryItems.likes} love this
             </h4>
-            </div>
-            }
-            </div>
+            
         </div>
     );
 
 }
-{/* <div className="picture">
-                    <img src={galleryItems.path} alt="pic of goat" 
-                    onClick={changeDisplay}/>
-                    <button onClick={onLike}>Love it!</button>
-                        <h4>
-                            {galleryItems.likes} love this
-                        </h4>
-                </div> */}
 
 
 export default GalleryItem;

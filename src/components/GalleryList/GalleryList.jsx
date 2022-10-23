@@ -16,4 +16,6 @@ function GalleryList({galleryList,likes}){
     );
 }
 
+
+
 export default GalleryList;
