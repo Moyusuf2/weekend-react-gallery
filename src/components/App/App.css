@@ -13,7 +13,7 @@
   font-size: 1.5em;
 }
 
-/* Three image containers (use 25% for four, and 50% for two, etc) */
+
 .container {
   float: left;
   width: 33.33%;
@@ -26,3 +26,15 @@
   clear: both;
   display: table;
 }
+
+img{
+  height: 100px;
+  width: 100px;
+  padding: 20px;
+}
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+
