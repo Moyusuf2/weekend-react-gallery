@@ -1,12 +1,18 @@
+import GalleryItem from "../GalleryItem/GalleryItem";
 
-
-function GalleryList(GalleryList){
-    return(
-        <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
-        </header>
-    )
+function GalleryList({galleryList}){
+    return (
+        <>
+        <div>
+            {galleryList.map((galItem) =>(
+                <GalleryItem 
+                key= {galItem.id}
+                galleryItems={galItem}/>
+            )
+            )}
+        </div>
+        </>
+    );
 }
 
-
-export default GalleryList
+export default GalleryList;

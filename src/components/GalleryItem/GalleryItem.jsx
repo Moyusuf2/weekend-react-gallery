@@ -1,26 +1,32 @@
-function GalleryItem(){
+function GalleryItem({galleryItems,likes}){
 
-    const onLike = () =>{
+    console.log('in GalleryItem');
+
+    const onLike = (evt) =>{
+        evt.preventDefault();
+        
+        likes(galleryItems)
 
     }
+
+    const changeDisplay = (evt =>{
+
+    })
     return(
-        <>
-        <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg"/>
-        <button className="likeBtn" onClick={onLike}>Love it!</button>
-        <img src="images/goat_small.jpg"/>
-        <button className="likeBtn" onClick={onLike}>Love it!</button>
-        <img src="images/goat_small.jpg"/>
-        <button className="likeBtn" onClick={onLike}>Love it!</button>
-        <img src="images/goat_small.jpg"/>
-        <button className="likeBtn" onClick={onLike}>Love it!</button>
-        <img src="images/goat_small.jpg"/>
-        <button className="likeBtn" onClick={onLike}>Love it!</button>
-        <img src="images/goat_small.jpg"/>
-        <button className="likeBtn" onClick={onLike}>Love it!</button>
+        <div className="container">
+            <h2>
+                <img src={galleryItems.path} alt="pic of goat" onClick={changeDisplay}/>
+            </h2>
+            <h4>
+                {galleryItems.likes}
+            </h4>
+            <button onClick={onLike}>Love it!</button>
+            
+            
+        </div>
+    );
 
-        </>
-    )
 }
+{/* <img src={galleryItems.path}/> */}
 
-export default GalleryItem
+export default GalleryItem;
