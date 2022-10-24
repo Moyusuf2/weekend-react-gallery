@@ -9,6 +9,7 @@ function App() {
 
   console.log('in  App');
   useEffect( ()=>{
+    //fetch gallery on page load
     console.log('in UseEffect');
     getGalleryList();
 
